@@ -94,7 +94,7 @@ if(!module.parent) {
     var source, target
 
     if(sourceFile) {
-      fs.createReadStream(sourceFile, 'utf-8').pipe(ts)
+      fs.createReadStream(sourceFile).pipe(ts)
     } else {
       process.stdin.pipe(ts)
       process.stdin.nextTick(function () {
@@ -103,7 +103,7 @@ if(!module.parent) {
     }
 
     if(targetFile) {
-      ts.pipe(fs.createWriteStream(targetFile, 'utf-8'))
+      ts.pipe(fs.createWriteStream(targetFile))
     } else  {
       ts.pipe(process.stdout, {end: false})
     }
