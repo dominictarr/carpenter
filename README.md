@@ -1,6 +1,26 @@
-# 0
+# Carpenter
 
-<img src=https://secure.travis-ci.org/Dominic Tarr/0.png?branch=master>
+minimal template/static-site generator
+
+given a text file...
+
+``` js
+# insert output of a shell command
+{{{!date}}} 
+
+# insert a commandline options `--name foo`
+{{{-name}}}
+
+# insert output of a javascript expression
+{{{=Math.random()}}}
+
+```
+
+try running carpenter on this readme!
+
+```
+carpenter README.md
+```
 
 
 ## License
