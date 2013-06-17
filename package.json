@@ -1,7 +1,7 @@
 {
   "name": "carpenter",
   "description": "template fillerouter, like blacksmith, but simpler",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/dominictarr/carpenter",
   "repository": {
     "type": "git",
