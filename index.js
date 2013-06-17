@@ -82,7 +82,7 @@ if(!module.parent) {
       transform: function (read, write) {
         read.pipe(template(makeInject(config))).pipe(write)
       }
-    }, function (err) { throw err })
+    }, function (err) { console.error(err) })
 
   } else {
 
