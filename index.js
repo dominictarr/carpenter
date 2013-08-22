@@ -108,7 +108,7 @@ if(!module.parent) {
 
     else {
       process.stdin.pipe(ts)
-      process.stdin.nextTick(function () {
+      process.nextTick(function () {
         process.stdout.resume()
       })
     }
