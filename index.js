@@ -93,9 +93,20 @@ if(!module.parent) {
 
     var source, target
 
-    if(sourceFile) {
+    if(!process.stdin.isTTY) {
+      process.stdin.pipe(ts)
+      process.stdin.nextTick(function () {
+        process.stdout.resume()
+      })
+      if(sourceFile) targetFile = sourceFile
+
+    } if(sourceFile)
       fs.createReadStream(sourceFile).pipe(ts)
-    } else {
+
+    else if(process.stdin.isTTY)
+      return fs.createReadStream(__dirname + '/usage.txt').pipe(process.stderr)
+
+    else {
       process.stdin.pipe(ts)
       process.stdin.nextTick(function () {
         process.stdout.resume()
