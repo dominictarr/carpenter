@@ -4,7 +4,9 @@ minimal template/static-site generator
 
 given a text file...
 
-``` js
+```
+carpenter sourceFile destFile {opts}
+
 # insert output of a shell command
 {{{!date}}} 
 
